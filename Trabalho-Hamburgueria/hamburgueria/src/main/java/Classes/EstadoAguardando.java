@@ -1,4 +1,4 @@
-package br.com.hamburgueria.state;
+package Classes;
 
 public class EstadoAguardando implements EstadoPedido {
 

@@ -1,4 +1,4 @@
-package br.com.hamburgueria.state;
+package Classes;
 
 public class EstadoEmPreparo implements EstadoPedido {
 
@@ -22,6 +22,12 @@ public class EstadoEmPreparo implements EstadoPedido {
     public void cancelar(ContextoPedido contexto) {
         System.out.println("Pedido cancelado durante o preparo.");
         contexto.setEstado(new EstadoCancelado());
+    }
+
+    @Override
+    public void pausar(ContextoPedido contexto) {
+        System.out.println("Faltou ingrediente! Pausando o preparo...");
+        contexto.setEstado(new EstadoEmEspera());
     }
 
     @Override
