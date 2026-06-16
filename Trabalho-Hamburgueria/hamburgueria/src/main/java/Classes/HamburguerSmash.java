@@ -1,9 +1,9 @@
-package br.com.hamburgueria.concretecomponent;
+package Classes;
 
-import br.com.hamburgueria.abstractfactory.Carne;
-import br.com.hamburgueria.abstractfactory.Molho;
-import br.com.hamburgueria.abstractfactory.Pao;
-import br.com.hamburgueria.component.Lanche;
+import Classes.Carne;
+import Classes.Molho;
+import Classes.Pao;
+import Classes.Lanche;
 
 public class HamburguerSmash implements Lanche {
 

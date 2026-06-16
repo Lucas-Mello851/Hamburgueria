@@ -1,9 +1,9 @@
-package br.com.hamburgueria.factory;
+package Classes;
 
-import br.com.hamburgueria.abstractfactory.IngredientesFactory;
-import br.com.hamburgueria.abstractfactory.IngredientesSmashFactory;
-import br.com.hamburgueria.component.Lanche;
-import br.com.hamburgueria.concretecomponent.HamburguerSmash;
+import Classes.IngredientesFactory;
+import Classes.IngredientesSmashFactory;
+import Classes.Lanche;
+import Classes.HamburguerSmash;
 
 public class SmashFactory implements LancheFactory {
 
