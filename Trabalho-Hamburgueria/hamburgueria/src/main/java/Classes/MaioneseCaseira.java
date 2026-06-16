@@ -1,4 +1,4 @@
-package br.com.hamburgueria.abstractfactory;
+package Classes;
 
 public class MaioneseCaseira implements Molho {
     @Override

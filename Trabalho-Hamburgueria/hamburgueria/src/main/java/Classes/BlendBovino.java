@@ -1,4 +1,4 @@
-package br.com.hamburgueria.abstractfactory;
+package Classes;
 
 public class BlendBovino implements Carne {
     @Override

@@ -1,4 +1,4 @@
-package br.com.hamburgueria.abstractfactory;
+package Classes;
 
 public class IngredientesClassicoFactory implements IngredientesFactory {
     @Override
