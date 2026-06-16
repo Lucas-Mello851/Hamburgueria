@@ -1,7 +1,7 @@
-package br.com.hamburgueria.concretedecorator;
+package Classes;
 
-import br.com.hamburgueria.component.Lanche;
-import br.com.hamburgueria.decorator.AdicionalDecorator;
+import Classes.Lanche;
+import Classes.AdicionalDecorator;
 
 public class Tomate extends AdicionalDecorator {
     public Tomate(Lanche lanche) { super(lanche); }

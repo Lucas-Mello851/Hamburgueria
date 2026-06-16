@@ -1,6 +1,6 @@
-package br.com.hamburgueria.decorator;
+package Classes;
 
-import br.com.hamburgueria.component.Lanche;
+import Classes.Lanche;
 
 public abstract class AdicionalDecorator implements Lanche {
 
