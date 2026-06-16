@@ -1,8 +1,7 @@
-package br.com.hamburgueria.facade;
+package Classes;
 
-import br.com.hamburgueria.cardapio.Cardapio;
-import br.com.hamburgueria.component.Lanche;
-import br.com.hamburgueria.concretedecorator.*;
+import Classes.Cardapio;
+import Classes.Lanche;
 
 public class HamburgueriafFacade {
 
