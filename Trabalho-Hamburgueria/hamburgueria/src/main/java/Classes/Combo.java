@@ -1,6 +1,6 @@
-package br.com.hamburgueria.composite;
+package Classes;
 
-import br.com.hamburgueria.visitor.CardapioVisitor;
+import Classes.CardapioVisitor;
 
 import java.util.ArrayList;
 import java.util.List;

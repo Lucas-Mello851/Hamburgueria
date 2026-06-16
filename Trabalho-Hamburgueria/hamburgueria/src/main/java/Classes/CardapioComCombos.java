@@ -1,6 +1,6 @@
-package br.com.hamburgueria.composite;
+package Classes;
 
-import br.com.hamburgueria.cardapio.Cardapio;
+import Classes.Cardapio;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -52,8 +52,8 @@ public class CardapioComCombos {
     }
 
     public void exibirCombos() {
-        System.out.println("\n===== COMBOS DO CARDAPIO =====");
+        System.out.println("\n COMBOS DO CARDAPIO ");
         combos.values().forEach(c -> c.exibir(""));
-        System.out.println("==============================\n");
+        System.out.println(" \n");
     }
 }
