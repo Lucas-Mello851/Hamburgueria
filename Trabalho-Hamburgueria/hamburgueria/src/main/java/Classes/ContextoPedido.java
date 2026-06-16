@@ -1,4 +1,4 @@
-package br.com.hamburgueria.state;
+package Classes;
 
 public class ContextoPedido {
 
@@ -16,6 +16,8 @@ public class ContextoPedido {
     public void preparar()  { estado.preparar(this); }
     public void entregar()  { estado.entregar(this); }
     public void cancelar()  { estado.cancelar(this); }
+    public void pausar()    { estado.pausar(this); }
+    public void retomar()   { estado.retomar(this); }
 
     public String getStatus() { return estado.getStatus(); }
 }

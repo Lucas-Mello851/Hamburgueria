@@ -1,4 +1,4 @@
-package br.com.hamburgueria.interpreter;
+package Classes;
 
 import java.util.ArrayList;
 import java.util.List;
