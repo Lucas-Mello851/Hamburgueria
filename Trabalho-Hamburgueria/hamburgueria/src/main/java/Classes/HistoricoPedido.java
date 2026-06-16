@@ -1,4 +1,4 @@
-package br.com.hamburgueria.memento;
+package Classes;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
@@ -13,12 +13,14 @@ public class HistoricoPedido {
     }
 
     public EstadoPedidoMemento desfazer() {
-        if (pilha.isEmpty()) {
+
+        if (pilha.size() < 2) {
             throw new IllegalStateException("Nenhum estado anterior disponivel.");
         }
-        EstadoPedidoMemento estado = pilha.pop();
+        pilha.pop();
+        EstadoPedidoMemento anterior = pilha.peek();
         System.out.println("Desfazendo... Historico restante: " + pilha.size() + " ponto(s).");
-        return estado;
+        return anterior;
     }
 
     public boolean temHistorico() {
