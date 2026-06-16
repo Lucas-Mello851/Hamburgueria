@@ -1,6 +1,4 @@
-package br.com.hamburgueria.cardapio;
-
-import br.com.hamburgueria.factory.*;
+package Classes;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
