@@ -1,4 +1,4 @@
-package br.com.hamburgueria.component;
+package Classes;
 
 public interface Lanche {
     String getDescricao();

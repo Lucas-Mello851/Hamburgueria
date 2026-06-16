@@ -1,4 +1,4 @@
-package br.com.hamburgueria.bridge;
+package Classes;
 
 public class PagamentoDinheiro implements FormaPagamento {
 
