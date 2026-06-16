@@ -1,4 +1,4 @@
-package br.com.hamburgueria.command;
+package Classes;
 
 public interface Comando {
     void executar();

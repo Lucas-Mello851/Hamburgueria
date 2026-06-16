@@ -1,4 +1,4 @@
-package br.com.hamburgueria.command;
+package Classes;
 
 import java.util.ArrayDeque;
 import java.util.Deque;

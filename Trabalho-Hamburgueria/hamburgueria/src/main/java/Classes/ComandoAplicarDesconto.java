@@ -1,13 +1,9 @@
-package br.com.hamburgueria.command;
-
-import br.com.hamburgueria.strategy.CalculadoraPreco;
-import br.com.hamburgueria.strategy.DescontoStrategy;
-import br.com.hamburgueria.strategy.SemDesconto;
+package Classes;
 
 public class ComandoAplicarDesconto implements Comando {
 
-    private CalculadoraPreco calculadora;
-    private DescontoStrategy novoDesconto;
+    private final CalculadoraPreco calculadora;
+    private final DescontoStrategy novoDesconto;
     private DescontoStrategy descontoAnterior;
 
     public ComandoAplicarDesconto(CalculadoraPreco calculadora, DescontoStrategy novoDesconto) {
@@ -17,7 +13,7 @@ public class ComandoAplicarDesconto implements Comando {
 
     @Override
     public void executar() {
-        descontoAnterior = new SemDesconto();
+        descontoAnterior = calculadora.getStrategy();
         calculadora.setStrategy(novoDesconto);
         System.out.println("Desconto aplicado: " + novoDesconto.getDescricao());
     }

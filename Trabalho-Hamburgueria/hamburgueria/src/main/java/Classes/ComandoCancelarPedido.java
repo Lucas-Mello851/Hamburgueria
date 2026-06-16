@@ -1,6 +1,6 @@
-package br.com.hamburgueria.command;
+package Classes;
 
-import br.com.hamburgueria.state.ContextoPedido;
+import Classes.ContextoPedido;
 
 public class ComandoCancelarPedido implements Comando {
 

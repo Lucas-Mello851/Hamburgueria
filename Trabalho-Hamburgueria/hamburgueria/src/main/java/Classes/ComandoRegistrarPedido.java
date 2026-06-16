@@ -1,8 +1,8 @@
-package br.com.hamburgueria.command;
+package Classes;
 
-import br.com.hamburgueria.builder.Pedido;
-import br.com.hamburgueria.builder.PedidoBuilder;
-import br.com.hamburgueria.state.ContextoPedido;
+import Classes.Pedido;
+import Classes.PedidoBuilder;
+import Classes.ContextoPedido;
 
 public class ComandoRegistrarPedido implements Comando {
 
