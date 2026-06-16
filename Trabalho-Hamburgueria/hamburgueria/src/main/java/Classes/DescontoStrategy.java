@@ -1,4 +1,4 @@
-package br.com.hamburgueria.strategy;
+package Classes;
 
 public interface DescontoStrategy {
     double calcular(double precoOriginal);

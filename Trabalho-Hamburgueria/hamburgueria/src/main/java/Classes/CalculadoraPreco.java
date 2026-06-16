@@ -1,4 +1,4 @@
-package br.com.hamburgueria.strategy;
+package Classes;
 
 public class CalculadoraPreco {
 
@@ -12,13 +12,15 @@ public class CalculadoraPreco {
         this.strategy = strategy;
     }
 
+    public DescontoStrategy getStrategy() {
+        return strategy;
+    }
+
     public double calcularPrecoFinal(double precoOriginal) {
-        double precoComDesconto = strategy.calcular(precoOriginal);
-        return precoComDesconto;
+        return strategy.calcular(precoOriginal);
     }
 
     public String getDescricaoDesconto() {
-        String descricao = strategy.getDescricao();
-        return descricao;
+        return strategy.getDescricao();
     }
 }

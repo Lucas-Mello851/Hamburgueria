@@ -1,4 +1,4 @@
-package br.com.hamburgueria.strategy;
+package Classes;
 
 public class DescontoFidelidade implements DescontoStrategy {
 
