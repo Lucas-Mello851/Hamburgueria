@@ -1,6 +1,6 @@
-package br.com.hamburgueria.adapter;
+package Classes;
 
-import br.com.hamburgueria.bridge.FormaPagamento;
+import Classes.FormaPagamento;
 
 public class MaquininhaAdapter implements FormaPagamento {
 

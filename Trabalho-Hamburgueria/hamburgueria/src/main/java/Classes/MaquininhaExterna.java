@@ -1,4 +1,4 @@
-package br.com.hamburgueria.adapter;
+package Classes;
 
 public class MaquininhaExterna {
 
