@@ -1,6 +1,5 @@
 package br.com.hamburgueria.atendimento;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,14 +34,16 @@ public class CentralAtendimentoRestaurante implements CentralAtendimento {
         eventosRegistrados.add(evento);
 
         if (evento.startsWith(EVENTO_REGISTRADO)) {
+
             String nomePedido = evento.split(":")[1];
             cozinha.receberPedido(nomePedido);
             if (filaPedidos != null) {
                 filaPedidos.novoPedido(nomePedido);
             }
         } else if (evento.equals(EVENTO_RECEBIDO)) {
-            cozinha.prepararPedido();
+
         } else if (evento.equals(EVENTO_PRONTO)) {
+
             entregador.buscarPedido(cozinha.getPedidoAtual());
             if (filaPedidos != null) {
                 filaPedidos.pedidoPronto(cozinha.getPedidoAtual());
@@ -52,7 +53,12 @@ public class CentralAtendimentoRestaurante implements CentralAtendimento {
         }
     }
 
+    public void marcarPedidoPronto() {
+        cozinha.prepararPedido();
+    }
+
     public List<String> getEventosRegistrados() {
         return eventosRegistrados;
     }
 }
+
