@@ -1,6 +1,5 @@
 package br.com.hamburgueria.cardapio;
 
-
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -61,4 +60,18 @@ public class CardapioComCombos implements CardapioPercorrivel {
     public PercursoCardapio criarIterator() {
         return new PercursoCardapioCompleto(new ArrayList<>(combos.values()));
     }
+
+    private AnalisadorCardapio ultimoAnalisador;
+
+    public void analisar(AnalisadorCardapio analisador) {
+        this.ultimoAnalisador = analisador;
+        for (Combo combo : combos.values()) {
+            combo.aceitar(analisador);
+        }
+    }
+
+    public AnalisadorCardapio getUltimoAnalisador() {
+        return ultimoAnalisador;
+    }
 }
+

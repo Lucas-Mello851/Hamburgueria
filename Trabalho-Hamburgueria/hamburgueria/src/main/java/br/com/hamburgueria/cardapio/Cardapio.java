@@ -1,13 +1,5 @@
 package br.com.hamburgueria.cardapio;
 
-import br.com.hamburgueria.ingredientes.Molho;
-import br.com.hamburgueria.produtos.Alface;
-import br.com.hamburgueria.produtos.Bacon;
-import br.com.hamburgueria.produtos.Queijo;
-import br.com.hamburgueria.produtos.Tomate;
-
-
-
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -47,6 +39,17 @@ public class Cardapio {
         return fabricas;
     }
 
+    public br.com.hamburgueria.ingredientes.FornecedorIngredientes getFornecedorIngredientes(String tipo) {
+        if ("Smash".equals(tipo)) {
+            return new br.com.hamburgueria.ingredientes.FornecedorIngredientesSmash();
+        } else if ("Vegano".equals(tipo)) {
+            return new br.com.hamburgueria.ingredientes.FornecedorIngredientesVegano();
+        } else if ("Clássico".equals(tipo)) {
+            return new br.com.hamburgueria.ingredientes.FornecedorIngredientesClassico();
+        }
+        throw new IllegalArgumentException("Tipo desconhecido: " + tipo);
+    }
+
     private final Map<String, Double> adicionais = new LinkedHashMap<>();
 
     private void registrarAdicionais() {
@@ -73,3 +76,4 @@ public class Cardapio {
         return sb.toString();
     }
 }
+
