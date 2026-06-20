@@ -5,13 +5,12 @@ import br.com.hamburgueria.pedidos.PedidoMontado;
 import br.com.hamburgueria.pedidos.CicloPedido;
 import br.com.hamburgueria.pedidos.MontadorPedido;
 
-
-
 public class OperacaoRegistrarPedido implements OperacaoCaixa {
 
     private String tipoLanche;
     private CicloPedido contextoPedido;
     private PedidoMontado pedidoRegistrado;
+    private final MontadorPedido montador = new MontadorPedido();
 
     public OperacaoRegistrarPedido(String tipoLanche, CicloPedido contextoPedido) {
         this.tipoLanche = tipoLanche;
@@ -20,7 +19,7 @@ public class OperacaoRegistrarPedido implements OperacaoCaixa {
 
     @Override
     public void executar() {
-        pedidoRegistrado = new MontadorPedido()
+        pedidoRegistrado = montador
                 .setTipoLanche(tipoLanche)
                 .setFormaPagamento("Pendente")
                 .build();
@@ -36,3 +35,4 @@ public class OperacaoRegistrarPedido implements OperacaoCaixa {
         return pedidoRegistrado;
     }
 }
+
