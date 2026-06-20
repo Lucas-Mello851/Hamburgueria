@@ -26,4 +26,6 @@ public final class Precos {
     public static final double PERCENTUAL_TOTAL = 100.0;
     public static final double CENTAVOS_POR_REAL = 100.0;
     public static final double LIMITE_COBRANCA_MAQUININHA_CENTAVOS = 50000.0;
+    public static final double TAXA_ENTREGA_DELIVERY = 7.00;
 }
+

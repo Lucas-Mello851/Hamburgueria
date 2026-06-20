@@ -5,7 +5,7 @@ import br.com.hamburgueria.produtos.Alface;
 import br.com.hamburgueria.produtos.Bacon;
 import br.com.hamburgueria.produtos.Queijo;
 import br.com.hamburgueria.produtos.Tomate;
-
+import br.com.hamburgueria.pagamento.FormaPagamento;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +16,7 @@ public class MontadorPedido {
     private List<String> adicionais;
     private String observacao;
     private String formaPagamento;
+    private FormaPagamento formaPagamentoReal;
 
     public MontadorPedido() {
         adicionais = new ArrayList<>();
@@ -63,11 +64,17 @@ public class MontadorPedido {
         return this;
     }
 
+    public MontadorPedido setFormaPagamento(FormaPagamento forma) {
+        this.formaPagamentoReal = forma;
+        this.formaPagamento = forma.getNome();
+        return this;
+    }
+
     public PedidoMontado build() {
         if (tipoLanche == null || tipoLanche.equals("")) {
             throw new IllegalStateException("Tipo de lanche e obrigatorio.");
         }
-        PedidoMontado pedido = new PedidoMontado(tipoLanche, adicionais, observacao, formaPagamento);
-        return pedido;
+        return new PedidoMontado(tipoLanche, adicionais, observacao, formaPagamento, formaPagamentoReal);
     }
 }
+

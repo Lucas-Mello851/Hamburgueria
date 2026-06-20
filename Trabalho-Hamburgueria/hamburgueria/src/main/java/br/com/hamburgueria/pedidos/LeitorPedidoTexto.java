@@ -10,8 +10,8 @@ public class LeitorPedidoTexto {
     public LeitorPedidoTexto() {
         expressoes = new ArrayList<>();
         expressoes.add(new RegraTipoLanche());
-        expressoes.add(new RegraRemocao());
         expressoes.add(new RegraAdicional());
+        expressoes.add(new RegraRemocao());
     }
 
     public PedidoTextoLido interpretar(String texto) {
@@ -22,3 +22,4 @@ public class LeitorPedidoTexto {
         return contexto;
     }
 }
+

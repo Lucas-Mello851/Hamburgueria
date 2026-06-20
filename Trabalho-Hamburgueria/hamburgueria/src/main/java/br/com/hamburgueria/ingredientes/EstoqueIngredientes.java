@@ -1,6 +1,5 @@
 package br.com.hamburgueria.ingredientes;
 
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -10,7 +9,13 @@ public class EstoqueIngredientes {
 
     private static final Map<String, IngredienteCompartilhado> cache = new HashMap<>();
 
-    private EstoqueIngredientes() {}
+    public EstoqueIngredientes() {}
+
+    public IngredienteCompartilhado obterPao(Pao pao) { return getPao(pao); }
+
+    public IngredienteCompartilhado obterCarne(Carne carne) { return getCarne(carne); }
+
+    public IngredienteCompartilhado obterMolho(Molho molho) { return getMolho(molho); }
 
     public static IngredienteCompartilhado getPao(Pao pao) {
         String chave = "PAO_" + pao.getDescricao();
@@ -35,3 +40,4 @@ public class EstoqueIngredientes {
         return new ArrayList<>(cache.keySet());
     }
 }
+
