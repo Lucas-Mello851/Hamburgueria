@@ -12,27 +12,51 @@ import static org.junit.jupiter.api.Assertions.*;
 class AtendimentoHamburgueriaTest {
 
     @Test
-    @DisplayName("Facade: lanche simples tem o preco base")
     void facadeSimples() {
         assertEquals(Precos.HAMBURGUER_CLASSICO, new AtendimentoHamburgueria().pedirLancheSimples("Clássico").getPreco());
     }
 
     @Test
-    @DisplayName("Facade: lanche com queijo soma o adicional")
     void facadeComQueijo() {
         assertEquals(Precos.HAMBURGUER_CLASSICO + Precos.ADICIONAL_QUEIJO,
                 new AtendimentoHamburgueria().pedirLancheComQueijo("Clássico").getPreco());
     }
 
     @Test
-    @DisplayName("Facade: lanche com bacon soma o adicional")
+    void facadeAtenderPorTexto() {
+        AtendimentoHamburgueria atendimento = new AtendimentoHamburgueria();
+        assertEquals("Em preparo", atendimento.atenderPorTexto("smash com queijo").getStatus());
+    }
+
+    @Test
+    void facadeAtenderColocaNoPainel() {
+        AtendimentoHamburgueria atendimento = new AtendimentoHamburgueria();
+        atendimento.atenderPorTexto("classico");
+        assertTrue(atendimento.getPainelDeChamada().getEmPreparo().contains("Clássico"));
+    }
+
+    @Test
+    void facadeAnunciaPronto() {
+        AtendimentoHamburgueria atendimento = new AtendimentoHamburgueria();
+        atendimento.atenderPorTexto("vegano");
+        atendimento.anunciarPedidoPronto("Vegano");
+        assertEquals("Vegano", atendimento.getPainelDeChamada().getUltimoChamado());
+    }
+
+    @Test
+    void facadeMontaLanchePorTexto() {
+        AtendimentoHamburgueria atendimento = new AtendimentoHamburgueria();
+        assertEquals(Precos.HAMBURGUER_SMASH + Precos.ADICIONAL_BACON,
+                atendimento.montarLanchePorTexto("smash com bacon").getPreco());
+    }
+
+    @Test
     void facadeComBacon() {
         assertEquals(Precos.HAMBURGUER_CLASSICO + Precos.ADICIONAL_BACON,
                 new AtendimentoHamburgueria().pedirLancheComBacon("Clássico").getPreco());
     }
 
     @Test
-    @DisplayName("Facade: lanche completo soma todos os adicionais")
     void facadeCompleto() {
         double esperado = Precos.HAMBURGUER_SMASH + Precos.ADICIONAL_QUEIJO + Precos.ADICIONAL_BACON
                 + Precos.ADICIONAL_ALFACE + Precos.ADICIONAL_TOMATE + Precos.ADICIONAL_MOLHO_ESPECIAL;

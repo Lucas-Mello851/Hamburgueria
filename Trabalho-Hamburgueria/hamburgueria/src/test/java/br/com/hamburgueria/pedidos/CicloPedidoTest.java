@@ -11,13 +11,11 @@ import static org.junit.jupiter.api.Assertions.*;
 class CicloPedidoTest {
 
     @Test
-    @DisplayName("State: estado inicial e aguardando")
     void stateInicial() {
         assertEquals("Aguardando confirmacao", new CicloPedido().getStatus());
     }
 
     @Test
-    @DisplayName("State: confirmar muda para em preparo")
     void stateConfirmar() {
         CicloPedido ctx = new CicloPedido();
         ctx.confirmar();
@@ -25,7 +23,6 @@ class CicloPedidoTest {
     }
 
     @Test
-    @DisplayName("State: preparar muda para pronto")
     void statePreparar() {
         CicloPedido ctx = new CicloPedido();
         ctx.confirmar();
@@ -34,7 +31,6 @@ class CicloPedidoTest {
     }
 
     @Test
-    @DisplayName("State: entregar muda para entregue")
     void stateEntregar() {
         CicloPedido ctx = new CicloPedido();
         ctx.confirmar();
@@ -44,7 +40,6 @@ class CicloPedidoTest {
     }
 
     @Test
-    @DisplayName("State: cancelar no inicio muda para cancelado")
     void stateCancelar() {
         CicloPedido ctx = new CicloPedido();
         ctx.cancelar();
@@ -52,7 +47,6 @@ class CicloPedidoTest {
     }
 
     @Test
-    @DisplayName("State: entregar sem confirmar nao avanca")
     void stateEntregarSemConfirmar() {
         CicloPedido ctx = new CicloPedido();
         ctx.entregar();
@@ -60,7 +54,6 @@ class CicloPedidoTest {
     }
 
     @Test
-    @DisplayName("State: pedido entregue nao pode ser cancelado")
     void stateEntregueNaoCancela() {
         CicloPedido ctx = new CicloPedido();
         ctx.confirmar();

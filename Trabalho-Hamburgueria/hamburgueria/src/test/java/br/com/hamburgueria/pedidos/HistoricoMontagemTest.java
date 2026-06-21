@@ -14,7 +14,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class HistoricoMontagemTest {
 
     @Test
-    @DisplayName("Memento: desfazer mantem ingrediente anterior")
     void mementoMantemAnterior() {
         PedidoEmMontagem pedido = new PedidoEmMontagem();
         HistoricoMontagem historico = new HistoricoMontagem();
@@ -28,7 +27,6 @@ class HistoricoMontagemTest {
     }
 
     @Test
-    @DisplayName("Memento: desfazer remove o ultimo ingrediente")
     void mementoRemoveUltimo() {
         PedidoEmMontagem pedido = new PedidoEmMontagem();
         HistoricoMontagem historico = new HistoricoMontagem();
@@ -42,7 +40,6 @@ class HistoricoMontagemTest {
     }
 
     @Test
-    @DisplayName("Memento: historico cresce a cada salvamento")
     void mementoTamanho() {
         HistoricoMontagem historico = new HistoricoMontagem();
         PedidoEmMontagem pedido = new PedidoEmMontagem();
@@ -52,13 +49,11 @@ class HistoricoMontagemTest {
     }
 
     @Test
-    @DisplayName("Memento: desfazer sem historico lanca excecao")
     void mementoSemHistorico() {
         assertThrows(IllegalStateException.class, () -> new HistoricoMontagem().desfazer());
     }
 
     @Test
-    @DisplayName("Memento: memento guarda o tipo do lanche")
     void mementoGuardaTipo() {
         PedidoEmMontagem pedido = new PedidoEmMontagem();
         pedido.setTipoLanche("Smash");

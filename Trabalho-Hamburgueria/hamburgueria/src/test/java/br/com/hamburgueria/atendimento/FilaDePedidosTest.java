@@ -14,7 +14,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class FilaDePedidosTest {
 
     @Test
-    @DisplayName("Observer: monitor da cozinha recebe novo pedido")
     void observerCozinha() {
         FilaDePedidos fila = new FilaDePedidos();
         MonitorCozinha monitor = new MonitorCozinha();
@@ -24,7 +23,6 @@ class FilaDePedidosTest {
     }
 
     @Test
-    @DisplayName("Observer: cliente e notificado quando o pedido fica pronto")
     void observerCliente() {
         FilaDePedidos fila = new FilaDePedidos();
         NotificacaoCliente cliente = new NotificacaoCliente("Joao");
@@ -34,7 +32,6 @@ class FilaDePedidosTest {
     }
 
     @Test
-    @DisplayName("Observer: monitor do caixa conta os eventos recebidos")
     void observerCaixaConta() {
         FilaDePedidos fila = new FilaDePedidos();
         MonitorCaixa caixa = new MonitorCaixa();
@@ -44,7 +41,6 @@ class FilaDePedidosTest {
     }
 
     @Test
-    @DisplayName("Observer: remover observer impede novas notificacoes")
     void observerRemover() {
         FilaDePedidos fila = new FilaDePedidos();
         MonitorCaixa caixa = new MonitorCaixa();
@@ -56,7 +52,6 @@ class FilaDePedidosTest {
     }
 
     @Test
-    @DisplayName("Observer: cliente nao notificado antes do pedido ficar pronto")
     void observerClienteNaoNotificado() {
         FilaDePedidos fila = new FilaDePedidos();
         NotificacaoCliente cliente = new NotificacaoCliente("Maria");
