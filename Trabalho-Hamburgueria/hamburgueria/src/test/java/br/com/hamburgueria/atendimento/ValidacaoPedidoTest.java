@@ -15,7 +15,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class ValidacaoPedidoTest {
 
     @Test
-    @DisplayName("Chain: pedido valido e processado")
     void chainValido() {
         EtapaValidacao cadeia = new ValidacaoEstoque();
         cadeia.setProximo(new ValidacaoPagamento()).setProximo(new FinalizacaoPedido());
@@ -25,7 +24,6 @@ class ValidacaoPedidoTest {
     }
 
     @Test
-    @DisplayName("Chain: pedido com valor zero e barrado")
     void chainInvalido() {
         EtapaValidacao cadeia = new ValidacaoEstoque();
         cadeia.setProximo(new ValidacaoPagamento()).setProximo(new FinalizacaoPedido());
@@ -35,19 +33,16 @@ class ValidacaoPedidoTest {
     }
 
     @Test
-    @DisplayName("Chain: solicitacao guarda o tipo")
     void chainSolicitacaoTipo() {
         assertEquals("Vegano", new SolicitacaoPedido("Vegano", 26.0).getTipo());
     }
 
     @Test
-    @DisplayName("Chain: solicitacao guarda o valor")
     void chainSolicitacaoValor() {
         assertEquals(26.0, new SolicitacaoPedido("Vegano", 26.0).getValor());
     }
 
     @Test
-    @DisplayName("Chain: pedido com tipo desconhecido e barrado no estoque")
     void chainEstoqueTipoDesconhecido() {
         EtapaValidacao cadeia = new ValidacaoEstoque();
         cadeia.setProximo(new ValidacaoPagamento()).setProximo(new FinalizacaoPedido());
@@ -57,7 +52,6 @@ class ValidacaoPedidoTest {
     }
 
     @Test
-    @DisplayName("Chain: solicitacao inicia nao processada")
     void chainSolicitacaoInicial() {
         assertFalse(new SolicitacaoPedido("Vegano", 26.0).isProcessado());
     }

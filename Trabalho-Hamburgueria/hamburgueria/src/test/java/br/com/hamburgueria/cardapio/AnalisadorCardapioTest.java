@@ -14,7 +14,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class AnalisadorCardapioTest {
 
     @Test
-    @DisplayName("Visitor: resumo soma o preco dos itens simples")
     void visitorResumoTotal() {
         Combo combo = new Combo("Teste");
         combo.adicionar(new ItemSimples("A", 10.0));
@@ -25,7 +24,6 @@ class AnalisadorCardapioTest {
     }
 
     @Test
-    @DisplayName("Visitor: resumo conta as entradas visitadas")
     void visitorResumoContagem() {
         Combo combo = new Combo("Teste");
         combo.adicionar(new ItemSimples("A", 10.0));
@@ -35,7 +33,6 @@ class AnalisadorCardapioTest {
     }
 
     @Test
-    @DisplayName("Visitor: filtro por preco retorna itens dentro do limite")
     void visitorFiltro() {
         Combo combo = new Combo("Teste");
         combo.adicionar(new ItemSimples("Barato", 5.0));

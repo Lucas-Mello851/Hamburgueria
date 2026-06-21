@@ -13,7 +13,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class OperadorCaixaTest {
 
     @Test
-    @DisplayName("Command: registrar pedido muda estado para em preparo")
     void commandRegistrar() {
         CicloPedido ctx = new CicloPedido();
         new OperadorCaixa().executar(new OperacaoRegistrarPedido("Smash", ctx));
@@ -21,7 +20,6 @@ class OperadorCaixaTest {
     }
 
     @Test
-    @DisplayName("Command: executar incrementa o total de operacoes")
     void commandTotalOperacoes() {
         OperadorCaixa operador = new OperadorCaixa();
         operador.executar(new OperacaoRegistrarPedido("Smash", new CicloPedido()));
@@ -29,7 +27,6 @@ class OperadorCaixaTest {
     }
 
     @Test
-    @DisplayName("Command: desfazer cancela o pedido registrado")
     void commandDesfazer() {
         CicloPedido ctx = new CicloPedido();
         OperadorCaixa operador = new OperadorCaixa();
@@ -39,7 +36,6 @@ class OperadorCaixaTest {
     }
 
     @Test
-    @DisplayName("Command: desfazer sem operacoes retorna falso")
     void commandDesfazerVazio() {
         assertFalse(new OperadorCaixa().desfazerUltimo());
     }

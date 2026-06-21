@@ -13,7 +13,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class ComboTest {
 
     @Test
-    @DisplayName("Composite: combo soma o preco dos itens")
     void compositeSomaPreco() {
         Combo combo = new Combo("Teste");
         combo.adicionar(new ItemSimples("A", 10.0));
@@ -22,7 +21,6 @@ class ComboTest {
     }
 
     @Test
-    @DisplayName("Composite: remover item reduz o total")
     void compositeRemoverItem() {
         Combo combo = new Combo("Teste");
         ItemSimples item = new ItemSimples("A", 10.0);
@@ -33,25 +31,21 @@ class ComboTest {
     }
 
     @Test
-    @DisplayName("Composite: combo retorna o nome")
     void compositeNome() {
         assertEquals("Combo X", new Combo("Combo X").getNome());
     }
 
     @Test
-    @DisplayName("Composite: item simples retorna o preco")
     void compositeItemSimplesPreco() {
         assertEquals(8.0, new ItemSimples("Batata", 8.0).getPreco());
     }
 
     @Test
-    @DisplayName("Composite: descrever inclui o nome do item")
     void compositeDescrever() {
         assertTrue(new ItemSimples("Batata", 8.0).descrever("").contains("Batata"));
     }
 
     @Test
-    @DisplayName("Composite: combo lista os itens adicionados")
     void compositeListaItens() {
         Combo combo = new Combo("Teste");
         combo.adicionar(new ItemSimples("A", 10.0));
@@ -59,13 +53,11 @@ class ComboTest {
     }
 
     @Test
-    @DisplayName("Composite: cardapio registra tres combos")
     void compositeTresCombos() {
         assertEquals(3, CardapioComCombos.getInstance().getCombos().size());
     }
 
     @Test
-    @DisplayName("Composite: combo inexistente lanca excecao")
     void compositeComboInexistente() {
         assertThrows(IllegalArgumentException.class, () -> CardapioComCombos.getInstance().getCombo("Inexistente"));
     }

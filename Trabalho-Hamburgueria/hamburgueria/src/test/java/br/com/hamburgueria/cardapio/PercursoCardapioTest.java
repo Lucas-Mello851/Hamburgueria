@@ -16,7 +16,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class PercursoCardapioTest {
 
     @Test
-    @DisplayName("Iterator: percorre a quantidade total de itens")
     void iteratorPercorreTotal() {
         List<Combo> combos = new ArrayList<>(CardapioComCombos.getInstance().getCombos().values());
         PercursoCardapioCompleto iterator = new PercursoCardapioCompleto(combos);
@@ -29,7 +28,6 @@ class PercursoCardapioTest {
     }
 
     @Test
-    @DisplayName("Iterator: reiniciar volta ao primeiro item")
     void iteratorReinicia() {
         List<Combo> combos = new ArrayList<>(CardapioComCombos.getInstance().getCombos().values());
         PercursoCardapioCompleto iterator = new PercursoCardapioCompleto(combos);
@@ -39,7 +37,6 @@ class PercursoCardapioTest {
     }
 
     @Test
-    @DisplayName("Iterator: avancar alem do fim lanca excecao")
     void iteratorAlemDoFim() {
         List<Combo> combos = new ArrayList<>(CardapioComCombos.getInstance().getCombos().values());
         PercursoCardapioCompleto iterator = new PercursoCardapioCompleto(combos);
@@ -50,7 +47,6 @@ class PercursoCardapioTest {
     }
 
     @Test
-    @DisplayName("Iterator por tipo: retorna apenas itens simples")
     void iteratorPorTipo() {
         List<Combo> combos = new ArrayList<>(CardapioComCombos.getInstance().getCombos().values());
         PercursoItensPorTipo iterator = new PercursoItensPorTipo(combos, ItemSimples.class);
